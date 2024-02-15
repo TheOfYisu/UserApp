@@ -1,0 +1,44 @@
+<div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand">Contacts</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-nav collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <div class="d-flex ms-auto col-lg-6 col-12" role="search">
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              (input)="searchContact($event)"
+            />
+          </div>
+          <button
+            class="btn btn-outline-success"
+            type="submit"
+            (click)="newUser()"
+          >
+            Nuevo contacto
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <h2 class="subtitle">Mi lista de contacto en angular.</h2>
+</div>

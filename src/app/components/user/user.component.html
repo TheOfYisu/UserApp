@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="postion-relative">
+    <!-- Img the card -->
+    <div class="photo">
+      <img class="img-fluid" [src]="user.photo" alt="{{ user.name }}" />
+    </div>
+
+    <!-- Title the card -->
+    <div class="card-title text-center mx-3">
+      <h5 class="title-name">{{ user.name | titlecase }}</h5>
+      <h6 class="title-profession">{{ user.profession | titlecase }}</h6>
+    </div>
+
+    <!-- Description phone the card -->
+    <div class="card-description">
+      <div class="icon">
+        <i class="bi bi-telephone-fill"></i>
+      </div>
+      <p class="text">{{ user.phone | phoneformat : "CO" }}</p>
+    </div>
+
+    <!-- Description phone the card -->
+    <div class="card-description">
+      <div class="icon">
+        <i class="bi bi-envelope-fill"></i>
+      </div>
+      <p class="text">{{ user.email }}</p>
+    </div>
+
+    <!-- Actions user -->
+    <div class="position-absolute options">
+      <i class="bi bi-pencil-square ms-3" (click)="editUser()"></i>
+      <i class="bi bi-trash ms-3" (click)="deleteUser()"></i>
+    </div>
+  </div>
+</div>

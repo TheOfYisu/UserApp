@@ -1,0 +1,90 @@
+<div class="card">
+  <div class="card-title">
+    <h2 class="title">Crear Contacto</h2>
+  </div>
+  <form [formGroup]="formUser" class="card-body">
+    <div class="mb-3">
+      <label for="name" class="form-label"
+        >Nombres y apellidos
+        <span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+      />
+      <div class="invalid-feedback" *ngIf="isFieldInvalid('name')">
+        El nombre es requerido.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="profession" class="form-label"
+        >Profesión
+        <span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="profession"
+        formControlName="profession"
+      />
+      <div class="invalid-feedback" *ngIf="isFieldInvalid('profession')">
+        La profesión es requerida.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label"
+        >Numero de telefono
+        <span class="text-danger">*</span>
+      </label>
+      <input
+        type="number"
+        class="form-control no-arrow"
+        id="phone"
+        formControlName="phone"
+      />
+      <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
+        El numero de telefono es requerido, debe ser de 10 numeros.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label"
+        >Correo electronico
+        <span class="text-danger">*</span>
+      </label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+      <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
+        El correo electronico es requerido.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="photo" class="form-label"
+        >Foto de perfil
+        <span class="text-danger">*</span>
+      </label>
+      <input
+        type="file"
+        class="form-control"
+        id="photo"
+        (change)="onFileSelected($event)"
+        accept=".jpg, .jpeg"
+        #fileInput
+      />
+    </div>
+  </form>
+  <div class="card-actions">
+    <button class="btn" (click)="saveUser()" [disabled]="!validateForm">
+      Guardar contacto
+    </button>
+  </div>
+</div>
+
+<div>
+  <img [src]="foto" alt="" />
+</div>
